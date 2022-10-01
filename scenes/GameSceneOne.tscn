@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://scenes/PauseScene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/TransitionOverlay.tscn" type="PackedScene" id=2]
@@ -23,6 +23,11 @@
 [ext_resource path="res://scripts/UI.gd" type="Script" id=21]
 [ext_resource path="res://assets/visual/game_assets/spr_wrap_guide.png" type="Texture" id=22]
 [ext_resource path="res://scripts/WrapHelper.gd" type="Script" id=23]
+[ext_resource path="res://scenes/items/CandleScene.tscn" type="PackedScene" id=24]
+[ext_resource path="res://scenes/items/ChocolateScene.tscn" type="PackedScene" id=25]
+[ext_resource path="res://scenes/items/JamScene.tscn" type="PackedScene" id=26]
+[ext_resource path="res://scenes/items/SoapScene.tscn" type="PackedScene" id=27]
+[ext_resource path="res://scenes/items/TeaScene.tscn" type="PackedScene" id=28]
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
@@ -136,6 +141,16 @@ centered = false
 [node name="Items" type="Node" parent="GameNode"]
 
 [node name="BottleNode" parent="GameNode/Items" instance=ExtResource( 20 )]
+
+[node name="CandleNode" parent="GameNode/Items" instance=ExtResource( 24 )]
+
+[node name="ChocolateNode" parent="GameNode/Items" instance=ExtResource( 25 )]
+
+[node name="JamNode" parent="GameNode/Items" instance=ExtResource( 26 )]
+
+[node name="SoapNode" parent="GameNode/Items" instance=ExtResource( 27 )]
+
+[node name="TeaNode" parent="GameNode/Items" instance=ExtResource( 28 )]
 
 [node name="WrapHelper" type="Node2D" parent="GameNode"]
 script = ExtResource( 23 )

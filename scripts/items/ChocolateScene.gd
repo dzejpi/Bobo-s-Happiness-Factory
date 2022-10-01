@@ -1,20 +1,20 @@
 extends Node2D
 
 
-onready var bottle_sprite = get_node("BottleSprite")
+onready var chocolate_sprite = get_node("ChocolateSprite")
 onready var wrap_sprite = get_node("WrapSprite")
 
-var bottle_sprite_1 = preload("res://assets/visual/game_assets/bottle/spr_item_bottle_1.png")
-var bottle_sprite_2 = preload("res://assets/visual/game_assets/bottle/spr_item_bottle_2.png")
-var bottle_sprite_3 = preload("res://assets/visual/game_assets/bottle/spr_item_bottle_3.png")
-var bottle_sprite_4 = preload("res://assets/visual/game_assets/bottle/spr_item_bottle_4.png")
-var bottle_sprite_5 = preload("res://assets/visual/game_assets/bottle/spr_item_bottle_5.png")
+var chocolate_sprite_1 = preload("res://assets/visual/game_assets/chocolate/spr_item_chocolate_1.png")
+var chocolate_sprite_2 = preload("res://assets/visual/game_assets/chocolate/spr_item_chocolate_2.png")
+var chocolate_sprite_3 = preload("res://assets/visual/game_assets/chocolate/spr_item_chocolate_3.png")
+var chocolate_sprite_4 = preload("res://assets/visual/game_assets/chocolate/spr_item_chocolate_4.png")
+var chocolate_sprite_5 = preload("res://assets/visual/game_assets/chocolate/spr_item_chocolate_5.png")
 
-var bottle_wrap_sprite_1 = preload("res://assets/visual/game_assets/bottle/spr_item_bottle_wrap_1.png")
-var bottle_wrap_sprite_2 = preload("res://assets/visual/game_assets/bottle/spr_item_bottle_wrap_2.png")
-var bottle_wrap_sprite_3 = preload("res://assets/visual/game_assets/bottle/spr_item_bottle_wrap_3.png")
-var bottle_wrap_sprite_4 = preload("res://assets/visual/game_assets/bottle/spr_item_bottle_wrap_4.png")
-var bottle_wrap_sprite_5 = preload("res://assets/visual/game_assets/bottle/spr_item_bottle_wrap_5.png")
+var chocolate_wrap_sprite_1 = preload("res://assets/visual/game_assets/chocolate/spr_item_chocolate_wrap_1.png")
+var chocolate_wrap_sprite_2 = preload("res://assets/visual/game_assets/chocolate/spr_item_chocolate_wrap_2.png")
+var chocolate_wrap_sprite_3 = preload("res://assets/visual/game_assets/chocolate/spr_item_chocolate_wrap_3.png")
+var chocolate_wrap_sprite_4 = preload("res://assets/visual/game_assets/chocolate/spr_item_chocolate_wrap_4.png")
+var chocolate_wrap_sprite_5 = preload("res://assets/visual/game_assets/chocolate/spr_item_chocolate_wrap_5.png")
 
 # It goes 5 -> 1 -> 2 -> 3 -> 4 for some reason
 var wrap_guide_1 = Vector2(-12, -8)
@@ -25,10 +25,10 @@ var wrap_guide_5 = Vector2(14, 12)
 
 var sprite_set = 0
 
-var initial_x = 0
-var initial_y = 84
+var initial_x = 104
+var initial_y = 144
 
-var working_area_y = 0
+var working_area_y = 88
 var working_area_x_begin = 82
 var working_area_x_end = 178
 
@@ -60,7 +60,7 @@ func _process(delta):
 			GlobalVar.damages_taken += price_value
 			is_fallen = true
 		
-	elif self.position.x > working_area_x_begin:
+	elif self.position.y < working_area_y:
 		is_on_conveyor = false
 		is_on_working_area = true
 	else:
@@ -68,7 +68,7 @@ func _process(delta):
 		is_on_working_area = false
 	
 	if is_on_conveyor:
-		self.position.x += (24 * delta)
+		self.position.y -= (24 * delta)
 	if is_on_working_area:
 		if !is_being_wrapped:
 			self.position.x += (8 * delta)
@@ -90,11 +90,11 @@ func _process(delta):
 				
 				
 	if is_being_wrapped:
-		if bottle_sprite.scale.x < 2:
-			bottle_sprite.scale.x += 0.1
+		if chocolate_sprite.scale.x < 2:
+			chocolate_sprite.scale.x += 0.1
 			wrap_sprite.scale.x += 0.1
-		if bottle_sprite.scale.y < 2:
-			bottle_sprite.scale.y += 0.1
+		if chocolate_sprite.scale.y < 2:
+			chocolate_sprite.scale.y += 0.1
 			wrap_sprite.scale.y += 0.1
 				
 		if self.position.y > 44:
@@ -104,7 +104,6 @@ func _process(delta):
 		GlobalVar.wrapped_item_y = self.position.y
 		
 		set_wrap_sprite(GlobalVar.actual_wrapping_point)
-		
 		
 		if GlobalVar.actual_wrapping_point == 5:
 			if !is_wrapped_up:
@@ -122,15 +121,15 @@ func _process(delta):
 func set_wrap_sprite(wrapping_point):
 	match wrapping_point:
 		1:
-			wrap_sprite.texture = bottle_wrap_sprite_1
+			wrap_sprite.texture = chocolate_wrap_sprite_1
 		2:
-			wrap_sprite.texture = bottle_wrap_sprite_2
+			wrap_sprite.texture = chocolate_wrap_sprite_2
 		3:
-			wrap_sprite.texture = bottle_wrap_sprite_3
+			wrap_sprite.texture = chocolate_wrap_sprite_3
 		4:
-			wrap_sprite.texture = bottle_wrap_sprite_4
+			wrap_sprite.texture = chocolate_wrap_sprite_4
 		5:
-			wrap_sprite.texture = bottle_wrap_sprite_5
+			wrap_sprite.texture = chocolate_wrap_sprite_5
 
 
 func set_random_sprite():
@@ -138,21 +137,20 @@ func set_random_sprite():
 	
 	match sprite_number:
 		1: 
-			bottle_sprite.texture = bottle_sprite_1
+			chocolate_sprite.texture = chocolate_sprite_1
 		2: 
-			bottle_sprite.texture = bottle_sprite_2
+			chocolate_sprite.texture = chocolate_sprite_2
 		3: 
-			bottle_sprite.texture = bottle_sprite_3
+			chocolate_sprite.texture = chocolate_sprite_3
 		4: 
-			bottle_sprite.texture = bottle_sprite_4
+			chocolate_sprite.texture = chocolate_sprite_4
 		5: 
-			bottle_sprite.texture = bottle_sprite_5
-		
+			chocolate_sprite.texture = chocolate_sprite_5
 
 
-func _on_BottleArea2D_mouse_entered():
+func _on_ChocolateArea2D_mouse_entered():
 	is_mouse_in = true
 
 
-func _on_BottleArea2D_mouse_exited():
+func _on_ChocolateArea2D_mouse_exited():
 	is_mouse_in = false
