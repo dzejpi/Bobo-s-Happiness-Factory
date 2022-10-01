@@ -8,5 +8,6 @@ script = ExtResource( 2 )
 
 [node name="TransitionSprite" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0 )
+scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 centered = false
