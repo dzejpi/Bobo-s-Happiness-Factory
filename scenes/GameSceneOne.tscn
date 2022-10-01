@@ -15,6 +15,6 @@ centered = false
 [node name="Pause" type="Node" parent="."]
 
 [node name="PauseScene" parent="Pause" instance=ExtResource( 1 )]
-position = Vector2( 96, 21 )
+position = Vector2( 96, 32 )
 
 [node name="TransitionOverlay" parent="." instance=ExtResource( 2 )]
