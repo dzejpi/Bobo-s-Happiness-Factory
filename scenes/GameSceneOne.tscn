@@ -1,15 +1,20 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/PauseScene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/TransitionOverlay.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/visual/game_assets/spr_game_background.png" type="Texture" id=3]
 
 [node name="GameSceneOne" type="Node2D"]
 
 [node name="GameNode" type="Node" parent="."]
 
+[node name="Sprite" type="Sprite" parent="GameNode"]
+texture = ExtResource( 3 )
+centered = false
+
 [node name="Pause" type="Node" parent="."]
 
 [node name="PauseScene" parent="Pause" instance=ExtResource( 1 )]
-position = Vector2( 512, 192 )
+position = Vector2( 96, 21 )
 
 [node name="TransitionOverlay" parent="." instance=ExtResource( 2 )]

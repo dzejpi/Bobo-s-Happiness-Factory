@@ -5,8 +5,8 @@ onready var dev_logo_sprite = $DevLogoSprite
 onready var jam_logo_sprite = $JamLogoSprite
 onready var transition_overlay_sprite = $TransitionOverlay/TransitionSprite
 
-var screen_width = (OS.window_size.x / 2)
-var screen_height = (OS.window_size.y / 2)
+var screen_width = (256 / 2)
+var screen_height = (144 / 2)
 
 # Logos displayed
 var logos_displayed = 0
@@ -29,13 +29,13 @@ var skip_splash = false
 
 func _ready():
 	# Set sprite offsets according to the window size
-	dev_logo_sprite.offset.x = screen_width
-	dev_logo_sprite.offset.y = screen_height
+	#dev_logo_sprite.offset.x = screen_width
+	#dev_logo_sprite.offset.y = screen_height
 	# Opacity
 	dev_logo_sprite.modulate.a = 0
 	
-	jam_logo_sprite.offset.x = screen_width
-	jam_logo_sprite.offset.y = screen_height
+	#jam_logo_sprite.offset.x = screen_width
+	#jam_logo_sprite.offset.y = screen_height
 	# Opacity
 	jam_logo_sprite.modulate.a = 0
 	
