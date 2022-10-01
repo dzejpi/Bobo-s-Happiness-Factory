@@ -16,11 +16,12 @@ var bottle_wrap_sprite_3 = preload("res://assets/visual/game_assets/bottle/spr_i
 var bottle_wrap_sprite_4 = preload("res://assets/visual/game_assets/bottle/spr_item_bottle_wrap_4.png")
 var bottle_wrap_sprite_5 = preload("res://assets/visual/game_assets/bottle/spr_item_bottle_wrap_5.png")
 
-var wrap_guide_1 = Vector2(14, 13)
-var wrap_guide_2 = Vector2(2, 5)
-var wrap_guide_3 = Vector2(13, 4)
-var wrap_guide_4 = Vector2(8, 0)
-var wrap_guide_5 = Vector2(8, 15)
+# It goes 5 -> 1 -> 2 -> 3 -> 4 for some reason
+var wrap_guide_1 = Vector2(-12, -8)
+var wrap_guide_2 = Vector2(14, -8)
+var wrap_guide_3 = Vector2(0, -16)
+var wrap_guide_4 = Vector2(0, 16)
+var wrap_guide_5 = Vector2(14, 12)
 
 var sprite_set = 0
 
@@ -38,7 +39,7 @@ var is_being_wrapped = false
 
 var is_selected = false
 var wrapped_points = 0
-var is_wrapped_up = true
+var is_wrapped_up = false
 
 var price_value = 20
 
@@ -67,7 +68,7 @@ func _process(delta):
 		is_on_working_area = false
 	
 	if is_on_conveyor:
-		self.position.x += (12 * delta)
+		self.position.x += (24 * delta)
 	if is_on_working_area:
 		if !is_being_wrapped:
 			self.position.x += (8 * delta)
@@ -90,12 +91,17 @@ func _process(delta):
 	if is_being_wrapped:
 		if bottle_sprite.scale.x < 2:
 			bottle_sprite.scale.x += 0.1
+			wrap_sprite.scale.x += 0.1
 		if bottle_sprite.scale.y < 2:
 			bottle_sprite.scale.y += 0.1
+			wrap_sprite.scale.y += 0.1
 				
 		if self.position.y > 44:
 			self.position.y -= 2
 			
+		GlobalVar.wrapped_item_x = self.position.x
+		GlobalVar.wrapped_item_y = self.position.y
+		
 		set_wrap_sprite(GlobalVar.actual_wrapping_point)
 		
 		
