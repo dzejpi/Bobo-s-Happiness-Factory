@@ -12,4 +12,5 @@ func _process(delta):
 
 func _on_ContinueGameButton_pressed():
 	get_parent().is_game_paused = false
+	GlobalVar.game_paused = false
 	get_parent().update_pause_state()
