@@ -75,9 +75,10 @@ func _process(delta):
 		is_on_working_area = false
 	
 	if is_on_conveyor:
-		self.position.y += (24 * delta)
+		if !is_being_wrapped && !is_wrapped_up:
+			self.position.y += (24 * delta)
 	if is_on_working_area:
-		if !is_being_wrapped:
+		if !is_being_wrapped && !is_wrapped_up:
 			self.position.x -= (8 * delta)
 		
 	# Handling the clicking
