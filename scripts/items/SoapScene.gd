@@ -55,8 +55,7 @@ func _ready():
 func _process(delta):
 	if GlobalVar.game_over:
 		visible = false
-		
-	if GlobalVar.game_paused:
+	elif GlobalVar.game_paused:
 		visible = false
 	else:
 		visible = true
