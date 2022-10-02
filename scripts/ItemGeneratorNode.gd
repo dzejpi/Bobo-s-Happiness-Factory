@@ -35,11 +35,14 @@ func _ready():
 
 func _process(delta):
 	if generator_working:
-		if generator_countdown >= 0:
-			generator_countdown -= (1 * delta)
+		if delay >= 0:
+			delay -= (1 * delta)
 		else:
-			generator_countdown = 11
-			generate_proper_item(type)
+			if generator_countdown >= 0:
+				generator_countdown -= (1 * delta)
+			else:
+				generator_countdown = 11
+				generate_proper_item(type)
 	else:
 		generator_countdown = 0
 	
