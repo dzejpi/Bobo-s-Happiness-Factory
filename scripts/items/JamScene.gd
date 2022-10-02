@@ -42,7 +42,7 @@ var is_selected = false
 var wrapped_points = 0
 var is_wrapped_up = false
 
-var price_value = 20
+var price_value = 12
 
 var is_mouse_in = false
 
