@@ -84,6 +84,7 @@ func _process(delta):
 	if Input.is_action_pressed("mouse_button_left") and is_mouse_in == true:
 		if is_on_working_area && GlobalVar.is_free_to_pick_item:
 			if !is_being_wrapped:
+				GlobalVar.is_free_to_pick_item = false
 				GlobalVar.actual_wrapping_point = 0
 				GlobalVar.is_gift_being_wrapped = true
 				GlobalVar.wrapping_guide_points = [
