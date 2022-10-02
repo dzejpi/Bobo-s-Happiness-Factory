@@ -29,7 +29,7 @@ var initial_x = 168
 var initial_y = 16
 
 var working_area_y = 68
-var working_area_x_begin = 82
+var working_area_x_begin = 78
 var working_area_x_end = 178
 
 var is_on_conveyor = true
@@ -53,7 +53,7 @@ func _ready():
 
 
 func _process(delta):
-	if self.position.x > working_area_x_end:
+	if self.position.x < working_area_x_begin:
 		is_on_conveyor = false
 		is_on_working_area = false
 		if !is_fallen:

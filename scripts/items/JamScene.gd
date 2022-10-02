@@ -29,7 +29,7 @@ var initial_x = 256
 var initial_y = 64
 
 var working_area_y = 0
-var working_area_x_begin = 82
+var working_area_x_begin = 78
 var working_area_x_end = 178
 
 var is_on_conveyor = true
