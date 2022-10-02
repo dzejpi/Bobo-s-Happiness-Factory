@@ -6,6 +6,8 @@ var gifts_wrapped_price = 0
 var damages_taken = 0
 var game_over = false
 var is_free_to_pick_item = true
+var game_dialog = "Disappear after five seconds."
+var game_dialog_countdown = 5
 
 var is_gift_being_wrapped = false
 var actual_wrapping_point = 0
@@ -19,4 +21,8 @@ func _ready():
 
 
 func _process(delta):
-	pass
+	if game_dialog_countdown > 0:
+		game_dialog_countdown -= (1 * delta)
+	else:
+		game_dialog = ""
+		game_dialog_countdown = 0

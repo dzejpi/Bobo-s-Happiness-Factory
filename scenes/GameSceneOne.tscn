@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://scenes/PauseScene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/TransitionOverlay.tscn" type="PackedScene" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://assets/visual/game_assets/spr_game_working_place2.png" type="Texture" id=17]
 [ext_resource path="res://assets/visual/game_assets/spr_game_working_place1.png" type="Texture" id=18]
 [ext_resource path="res://resources/DefaultFont.tres" type="DynamicFont" id=19]
+[ext_resource path="res://assets/visual/game_assets/spr_ui_text_bg.png" type="Texture" id=20]
 [ext_resource path="res://scripts/UI.gd" type="Script" id=21]
 [ext_resource path="res://assets/visual/game_assets/spr_wrap_guide.png" type="Texture" id=22]
 [ext_resource path="res://scripts/WrapHelper.gd" type="Script" id=23]
@@ -95,7 +96,6 @@ centered = false
 
 [node name="WorkPlaceSprite" type="AnimatedSprite" parent="GameNode/WorkPlace"]
 frames = SubResource( 7 )
-frame = 1
 playing = true
 centered = false
 
@@ -103,34 +103,34 @@ centered = false
 
 [node name="ConveyorOne" type="AnimatedSprite" parent="GameNode/Conveyor Belts"]
 frames = SubResource( 1 )
-frame = 1
 playing = true
 centered = false
 
 [node name="ConveyorTwo" type="AnimatedSprite" parent="GameNode/Conveyor Belts"]
 frames = SubResource( 2 )
+frame = 1
 playing = true
 centered = false
 
 [node name="ConveyorThree" type="AnimatedSprite" parent="GameNode/Conveyor Belts"]
 frames = SubResource( 3 )
+frame = 1
 playing = true
 centered = false
 
 [node name="ConveyorFour" type="AnimatedSprite" parent="GameNode/Conveyor Belts"]
 frames = SubResource( 4 )
+frame = 1
 playing = true
 centered = false
 
 [node name="ConveyorFive" type="AnimatedSprite" parent="GameNode/Conveyor Belts"]
 frames = SubResource( 5 )
-frame = 1
 playing = true
 centered = false
 
 [node name="ConveoyrSix" type="AnimatedSprite" parent="GameNode/Conveyor Belts"]
 frames = SubResource( 6 )
-frame = 1
 playing = true
 centered = false
 
@@ -183,6 +183,10 @@ script = ExtResource( 21 )
 texture = ExtResource( 16 )
 centered = false
 
+[node name="TextBackground" type="Sprite" parent="GameNode/UI"]
+texture = ExtResource( 20 )
+centered = false
+
 [node name="GiftsNumberLabel" type="Label" parent="GameNode/UI"]
 margin_left = 4.0
 margin_top = 2.0
@@ -206,6 +210,19 @@ custom_fonts/font = ExtResource( 19 )
 text = "0$ Damages"
 align = 2
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameTextLabel" type="Label" parent="GameNode/UI"]
+margin_left = 136.0
+margin_top = 102.0
+margin_right = 253.0
+margin_bottom = 144.0
+custom_fonts/font = ExtResource( 19 )
+text = "Time seems to be moving quicker than usual. Weird!"
+align = 3
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
