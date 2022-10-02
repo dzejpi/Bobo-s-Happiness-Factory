@@ -45,6 +45,9 @@ var price_value = 20
 
 var is_mouse_in = false
 
+var falling_speed = randi()%36+15
+var rotation_speed = randi()%2-2
+
 
 func _ready():
 	set_random_sprite()
@@ -66,13 +69,20 @@ func _process(delta):
 		if !is_fallen:
 			GlobalVar.damages_taken += price_value
 			is_fallen = true
-		
 	elif self.position.y > working_area_y:
 		is_on_conveyor = false
 		is_on_working_area = true
 	else:
 		is_on_conveyor = true
 		is_on_working_area = false
+	
+	if is_fallen:
+		if soap_sprite.scale.x > 0.5:
+			soap_sprite.scale.x -= 0.025
+			soap_sprite.scale.y -= 0.025
+			rotation_degrees += rotation_speed
+			self.position.x -= (falling_speed * delta)
+			self.position.y -= (falling_speed/2 * delta)
 	
 	if is_on_conveyor:
 		if !is_being_wrapped && !is_wrapped_up:
