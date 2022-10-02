@@ -3,6 +3,7 @@ extends Node2D
 
 export var type = 1
 export var delay = 0
+export var generator_working = true
 
 onready var item_1 = load("res://scenes/items/BottleScene.tscn")
 onready var item_2 = load("res://scenes/items/CandleScene.tscn")
@@ -10,7 +11,6 @@ onready var item_3 = load("res://scenes/items/ChocolateScene.tscn")
 onready var item_4 = load("res://scenes/items/JamScene.tscn")
 onready var item_5 = load("res://scenes/items/SoapScene.tscn")
 onready var item_6 = load("res://scenes/items/TeaScene.tscn")
-
 
 var generator_countdown = 10
 
@@ -34,11 +34,14 @@ func _ready():
 
 
 func _process(delta):
-	if generator_countdown >= 0:
-		generator_countdown -= (1 * delta)
+	if generator_working:
+		if generator_countdown >= 0:
+			generator_countdown -= (1 * delta)
+		else:
+			generator_countdown = 11
+			generate_proper_item(type)
 	else:
-		generator_countdown = 11
-		generate_proper_item(type)
+		generator_countdown = 0
 	
 	label.text = String(int(generator_countdown))
 	

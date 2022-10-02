@@ -81,7 +81,7 @@ animations = [ {
 } ]
 
 [sub_resource type="CircleShape2D" id=8]
-radius = 3.0
+radius = 5.0
 
 [node name="GameSceneOne" type="Node2D"]
 
@@ -95,6 +95,7 @@ centered = false
 
 [node name="WorkPlaceSprite" type="AnimatedSprite" parent="GameNode/WorkPlace"]
 frames = SubResource( 7 )
+frame = 1
 playing = true
 centered = false
 
@@ -102,34 +103,34 @@ centered = false
 
 [node name="ConveyorOne" type="AnimatedSprite" parent="GameNode/Conveyor Belts"]
 frames = SubResource( 1 )
+frame = 1
 playing = true
 centered = false
 
 [node name="ConveyorTwo" type="AnimatedSprite" parent="GameNode/Conveyor Belts"]
 frames = SubResource( 2 )
-frame = 1
 playing = true
 centered = false
 
 [node name="ConveyorThree" type="AnimatedSprite" parent="GameNode/Conveyor Belts"]
 frames = SubResource( 3 )
-frame = 1
 playing = true
 centered = false
 
 [node name="ConveyorFour" type="AnimatedSprite" parent="GameNode/Conveyor Belts"]
 frames = SubResource( 4 )
-frame = 1
 playing = true
 centered = false
 
 [node name="ConveyorFive" type="AnimatedSprite" parent="GameNode/Conveyor Belts"]
 frames = SubResource( 5 )
+frame = 1
 playing = true
 centered = false
 
 [node name="ConveoyrSix" type="AnimatedSprite" parent="GameNode/Conveyor Belts"]
 frames = SubResource( 6 )
+frame = 1
 playing = true
 centered = false
 
@@ -137,26 +138,31 @@ centered = false
 
 [node name="BottleGenerator" parent="GameNode/Items" instance=ExtResource( 29 )]
 position = Vector2( 13, 69 )
+generator_working = false
 
 [node name="CandleGenerator" parent="GameNode/Items" instance=ExtResource( 29 )]
 position = Vector2( 69, 132 )
 type = 2
+generator_working = false
 
 [node name="ChocolateGenerator" parent="GameNode/Items" instance=ExtResource( 29 )]
 position = Vector2( 123, 132 )
 type = 3
+generator_working = false
 
 [node name="JamGenerator" parent="GameNode/Items" instance=ExtResource( 29 )]
 position = Vector2( 245, 91 )
 type = 4
+generator_working = false
 
 [node name="TeaGenerator" parent="GameNode/Items" instance=ExtResource( 29 )]
 position = Vector2( 188, 30 )
-type = 5
+type = 6
 
 [node name="SoapGenerator" parent="GameNode/Items" instance=ExtResource( 29 )]
-position = Vector2( 134, 30 )
-type = 6
+position = Vector2( 135, 30 )
+type = 5
+generator_working = false
 
 [node name="WrapHelper" type="Node2D" parent="GameNode"]
 script = ExtResource( 23 )
