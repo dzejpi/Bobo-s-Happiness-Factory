@@ -4,7 +4,7 @@
 [ext_resource path="res://scripts/SplashScene.gd" type="Script" id=2]
 [ext_resource path="res://assets/visual/ui/logos/logo_ld.png" type="Texture" id=3]
 [ext_resource path="res://scenes/TransitionOverlay.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/visual/game_assets/spr_game_menu_background.png" type="Texture" id=5]
+[ext_resource path="res://assets/visual/game_assets/spr_game_background.png" type="Texture" id=5]
 
 [node name="SplashScene" type="Node2D"]
 script = ExtResource( 2 )
