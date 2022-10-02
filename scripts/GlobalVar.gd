@@ -9,6 +9,7 @@ var is_free_to_pick_item = true
 var game_dialog = ""
 var game_dialog_countdown = 10
 var game_speed = 1
+var game_time_elapsed = 0
 
 var is_gift_being_wrapped = false
 var actual_wrapping_point = 0
@@ -30,6 +31,11 @@ func _ready():
 
 
 func _process(delta):
+	if damages_taken > 500:
+		game_over = true
+	
+	game_time_elapsed += (1 * delta)
+	
 	if game_dialog_countdown > 0:
 		game_dialog_countdown -= (1 * delta)
 	else:

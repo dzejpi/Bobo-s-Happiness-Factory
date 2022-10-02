@@ -6,7 +6,17 @@ var game_loop_speed = 1
 
 
 func _ready():
-	pass
+	# Reset everything
+	GlobalVar.game_time_elapsed = 0
+	GlobalVar.gifts_wrapped = 0
+	GlobalVar.gifts_wrapped_price = 0
+	GlobalVar.damages_taken = 490
+	GlobalVar.game_over = false
+	GlobalVar.is_free_to_pick_item = true
+	GlobalVar.game_dialog = ""
+	GlobalVar.game_speed = 1
+	GlobalVar.game_time_elapsed = 0
+	GlobalVar.is_gift_being_wrapped = false
 
 
 func _process(delta):
