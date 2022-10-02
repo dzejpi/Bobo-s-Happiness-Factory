@@ -26,6 +26,8 @@ func _ready():
 	GlobalVar.is_4_working = false
 	GlobalVar.is_5_working = false
 	GlobalVar.is_6_working = false
+	
+	GlobalVar.bobo_mood = 1
 
 
 func _process(delta):
