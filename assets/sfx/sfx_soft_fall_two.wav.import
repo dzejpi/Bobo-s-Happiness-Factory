@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_soft_fall_two.wav-c473a7d9b97359adb8024fbd64c60e18.sample"
+
+[deps]
+
+source_file="res://assets/sfx/sfx_soft_fall_two.wav"
+dest_files=[ "res://.import/sfx_soft_fall_two.wav-c473a7d9b97359adb8024fbd64c60e18.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
