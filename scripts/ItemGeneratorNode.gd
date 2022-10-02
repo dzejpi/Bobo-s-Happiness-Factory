@@ -34,12 +34,14 @@ func _ready():
 
 
 func _process(delta):
+	check_if_working()
+	
 	if generator_working:
 		if delay >= 0:
 			delay -= (1 * delta)
 		else:
 			if generator_countdown >= 0:
-				generator_countdown -= (1 * delta)
+				generator_countdown -= (GlobalVar.game_speed * delta)
 			else:
 				generator_countdown = 11
 				generate_proper_item(type)
@@ -69,3 +71,37 @@ func generate_proper_item(type):
 		6:
 			var item_6_instance = item_6.instance()
 			get_tree().root.add_child(item_6_instance)
+
+
+func check_if_working():
+	match type:
+		1:
+			if GlobalVar.is_1_working:
+				generator_working = true
+			else:
+				generator_working = false
+		2:
+			if GlobalVar.is_2_working:
+				generator_working = true
+			else:
+				generator_working = false
+		3:
+			if GlobalVar.is_3_working:
+				generator_working = true
+			else:
+				generator_working = false
+		4:
+			if GlobalVar.is_4_working:
+				generator_working = true
+			else:
+				generator_working = false
+		5:
+			if GlobalVar.is_5_working:
+				generator_working = true
+			else:
+				generator_working = false
+		6:
+			if GlobalVar.is_6_working:
+				generator_working = true
+			else:
+				generator_working = false

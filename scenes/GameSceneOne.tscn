@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://scenes/PauseScene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/TransitionOverlay.tscn" type="PackedScene" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://scripts/UI.gd" type="Script" id=21]
 [ext_resource path="res://assets/visual/game_assets/spr_wrap_guide.png" type="Texture" id=22]
 [ext_resource path="res://scripts/WrapHelper.gd" type="Script" id=23]
+[ext_resource path="res://scripts/GameLoop.gd" type="Script" id=24]
 [ext_resource path="res://scenes/ItemGeneratorScene.tscn" type="PackedScene" id=29]
 
 [sub_resource type="SpriteFrames" id=7]
@@ -86,6 +87,9 @@ radius = 5.0
 
 [node name="GameSceneOne" type="Node2D"]
 
+[node name="GameLoopNode" type="Node" parent="."]
+script = ExtResource( 24 )
+
 [node name="GameNode" type="Node" parent="."]
 
 [node name="BackgroundSprite" type="Sprite" parent="GameNode"]
@@ -138,32 +142,36 @@ centered = false
 
 [node name="BottleGenerator" parent="GameNode/Items" instance=ExtResource( 29 )]
 position = Vector2( 13, 69 )
-delay = 2
 
 [node name="CandleGenerator" parent="GameNode/Items" instance=ExtResource( 29 )]
 position = Vector2( 69, 132 )
 type = 2
 delay = 4
+generator_working = false
 
 [node name="ChocolateGenerator" parent="GameNode/Items" instance=ExtResource( 29 )]
 position = Vector2( 123, 132 )
 type = 3
 delay = 6
+generator_working = false
 
 [node name="JamGenerator" parent="GameNode/Items" instance=ExtResource( 29 )]
 position = Vector2( 245, 91 )
 type = 4
 delay = 8
+generator_working = false
 
 [node name="TeaGenerator" parent="GameNode/Items" instance=ExtResource( 29 )]
 position = Vector2( 188, 30 )
 type = 6
 delay = 10
+generator_working = false
 
 [node name="SoapGenerator" parent="GameNode/Items" instance=ExtResource( 29 )]
 position = Vector2( 135, 30 )
 type = 5
 delay = 12
+generator_working = false
 
 [node name="WrapHelper" type="Node2D" parent="GameNode"]
 script = ExtResource( 23 )
