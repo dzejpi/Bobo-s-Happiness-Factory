@@ -1,6 +1,9 @@
 extends Node
 
 
+onready var sfx_node = $SfxPlayer
+onready var music_node = $MusicPlayer
+
 var gifts_wrapped = 0
 var gifts_wrapped_price = 0
 var damages_taken = 0
@@ -26,6 +29,17 @@ var is_4_working = false
 var is_5_working = false
 var is_6_working = false
 
+var sfx_glass_fall = preload("res://assets/sfx/sfx_glass_fall.wav")
+var sfx_glass_fall_two = preload("res://assets/sfx/sfx_glass_fall_two.wav")
+var sfx_hard_fall = preload("res://assets/sfx/sfx_hard_fall.wav")
+var sfx_hard_fall_two = preload("res://assets/sfx/sfx_hard_fall_two.wav")
+var sfx_select = preload("res://assets/sfx/sfx_select.wav")
+var sfx_soft_fall = preload("res://assets/sfx/sfx_soft_fall.wav")
+var sfx_soft_fall_two = preload("res://assets/sfx/sfx_soft_fall_two.wav")
+var sfx_wrap = preload("res://assets/sfx/sfx_wrap.wav")
+
+#var game_music = preload("")
+
 
 func _ready():
 	pass
@@ -42,3 +56,34 @@ func _process(delta):
 	else:
 		game_dialog = ""
 		game_dialog_countdown = 0
+
+#func play_music(number):
+#	music_node.play(game_music)
+	
+	
+func play_sound(sfx):
+	match sfx:
+		"sfx_glass_fall":
+			sfx_node.stream = sfx_glass_fall
+			sfx_node.play()
+		"sfx_glass_fall_two":
+			sfx_node.stream = sfx_glass_fall_two
+			sfx_node.play()
+		"sfx_hard_fall":
+			sfx_node.stream = sfx_hard_fall
+			sfx_node.play()
+		"sfx_hard_fall_two":
+			sfx_node.stream = sfx_hard_fall_two
+			sfx_node.play()
+		"sfx_select":
+			sfx_node.stream = sfx_select
+			sfx_node.play()
+		"sfx_soft_fall":
+			sfx_node.stream = sfx_soft_fall
+			sfx_node.play()
+		"sfx_soft_fall_two":
+			sfx_node.stream = sfx_soft_fall_two
+			sfx_node.play()
+		"sfx_wrap":
+			sfx_node.stream = sfx_wrap
+			sfx_node.play()

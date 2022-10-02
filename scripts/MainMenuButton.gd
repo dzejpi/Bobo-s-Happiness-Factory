@@ -13,4 +13,6 @@ func _process(delta):
 
 
 func _on_MainMenuButton_pressed():
+	GlobalVar.play_sound("select")
 	get_tree().change_scene("res://scenes/MainMenuScene.tscn")
+	

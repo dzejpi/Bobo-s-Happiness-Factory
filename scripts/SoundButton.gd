@@ -40,3 +40,5 @@ func _on_SoundButton_pressed():
 		AudioServer.set_bus_mute(AudioServer.get_bus_index("Sound"), false)
 		self.pressed = true
 		release_focus()
+		
+	GlobalVar.play_sound("sfx_select")

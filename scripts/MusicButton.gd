@@ -28,6 +28,8 @@ func _process(delta):
 
 
 func _on_MusicButton_pressed():
+	GlobalVar.play_sound("sfx_select")
+	
 	if music_on:
 		music_on = false
 		music_label.text = "Music: Off"

@@ -4,3 +4,9 @@
 
 [node name="GlobalVar" type="Node"]
 script = ExtResource( 1 )
+
+[node name="SfxPlayer" type="AudioStreamPlayer2D" parent="."]
+bus = "Sound"
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
+bus = "Music"

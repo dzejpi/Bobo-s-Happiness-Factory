@@ -15,4 +15,5 @@ func _process(delta):
 
 
 func _on_RestartGameButton_pressed():
+	GlobalVar.play_sound("sfx_select")
 	get_tree().reload_current_scene()

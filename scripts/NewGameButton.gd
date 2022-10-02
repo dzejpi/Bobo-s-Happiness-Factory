@@ -20,4 +20,5 @@ func _process(delta):
 
 
 func _on_NewGameButton_pressed():
+	GlobalVar.play_sound("sfx_select")
 	button_pressed = true

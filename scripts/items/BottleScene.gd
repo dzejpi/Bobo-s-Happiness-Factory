@@ -36,6 +36,7 @@ var is_on_conveyor = true
 var is_on_working_area = false
 var is_fallen = false
 var is_being_wrapped = false
+var is_on_floor = false
 
 var is_selected = false
 var wrapped_points = 0
@@ -83,6 +84,10 @@ func _process(delta):
 			rotation_degrees += rotation_speed
 			self.position.x += (falling_speed * delta)
 			self.position.y += (falling_speed/2 * delta)
+		else:
+			if !is_on_floor:
+				is_on_floor = true
+				GlobalVar.play_sound("sfx_glass_fall_two")
 	
 	if is_on_conveyor:
 		self.position.x += (24 * delta)
