@@ -55,7 +55,12 @@ func _ready():
 func _process(delta):
 	if GlobalVar.game_over:
 		visible = false
-		
+	
+	if GlobalVar.game_paused:
+		visible = false
+	else:
+		visible = true
+	
 	if self.position.x < working_area_x_begin:
 		is_on_conveyor = false
 		is_on_working_area = false

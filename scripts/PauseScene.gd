@@ -12,9 +12,11 @@ func _process(delta):
 	if Input.is_action_just_pressed("game_pause"):
 		if is_game_paused:
 			is_game_paused = false
+			GlobalVar.game_paused = false
 			update_pause_state()
 		else:
 			is_game_paused = true
+			GlobalVar.game_paused = true
 			update_pause_state()
 
 

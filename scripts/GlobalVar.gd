@@ -5,6 +5,7 @@ var gifts_wrapped = 0
 var gifts_wrapped_price = 0
 var damages_taken = 0
 var game_over = false
+var game_paused = false
 var is_free_to_pick_item = true
 var game_dialog = ""
 var game_dialog_countdown = 10
