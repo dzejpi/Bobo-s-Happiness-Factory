@@ -19,9 +19,9 @@ var chocolate_wrap_sprite_5 = preload("res://assets/visual/game_assets/chocolate
 # It goes 5 -> 1 -> 2 -> 3 -> 4 for some reason
 var wrap_guide_1 = Vector2(-12, -8)
 var wrap_guide_2 = Vector2(14, -8)
-var wrap_guide_3 = Vector2(0, -16)
-var wrap_guide_4 = Vector2(0, 16)
-var wrap_guide_5 = Vector2(14, 12)
+var wrap_guide_3 = Vector2(0, -12)
+var wrap_guide_4 = Vector2(0, 20)
+var wrap_guide_5 = Vector2(14, 16)
 
 var sprite_set = 0
 

@@ -17,11 +17,11 @@ var soap_wrap_sprite_4 = preload("res://assets/visual/game_assets/soap/spr_item_
 var soap_wrap_sprite_5 = preload("res://assets/visual/game_assets/soap/spr_item_soap_wrap_5.png")
 
 # It goes 5 -> 1 -> 2 -> 3 -> 4 for some reason
-var wrap_guide_1 = Vector2(-12, -8)
-var wrap_guide_2 = Vector2(14, -8)
-var wrap_guide_3 = Vector2(0, -16)
-var wrap_guide_4 = Vector2(0, 16)
-var wrap_guide_5 = Vector2(14, 12)
+var wrap_guide_1 = Vector2(-8, -2)
+var wrap_guide_2 = Vector2(10, -2)
+var wrap_guide_3 = Vector2(0, -6)
+var wrap_guide_4 = Vector2(0, 20)
+var wrap_guide_5 = Vector2(10, 14)
 
 var sprite_set = 0
 

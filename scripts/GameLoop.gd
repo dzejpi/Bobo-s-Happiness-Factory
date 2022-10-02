@@ -18,6 +18,14 @@ func _ready():
 	GlobalVar.game_speed = 1
 	GlobalVar.game_time_elapsed = 0
 	GlobalVar.is_gift_being_wrapped = false
+	
+	# To make double sure
+	GlobalVar.is_1_working = true
+	GlobalVar.is_2_working = false
+	GlobalVar.is_3_working = false
+	GlobalVar.is_4_working = false
+	GlobalVar.is_5_working = false
+	GlobalVar.is_6_working = false
 
 
 func _process(delta):
