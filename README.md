@@ -1,6 +1,7 @@
 # Bobo’s Happiness Factory!
 
-![ase_bobo_logo](https://user-images.githubusercontent.com/18399695/193473787-471f5dbc-4419-49f0-80c0-2422c6ed1b21.png)
+![ase_bobo_logo](https://user-images.githubusercontent.com/18399695/193474538-1425b797-c180-48fb-b6d8-55ff8b775c2a.png)
+
 
 Everybody loves treats and gifts from Bobo’s Happiness Family company. Do you have what it takes to become one of the best Bobo’s Happiness Factory workers? We will see about that!
 
@@ -34,5 +35,6 @@ Game was created using these tools:
 * Ableton Live 11 Lite using Sylenth1 VST.
 
 ### Other links
-[Ludum Dare page here](https://ldjam.com/events/ludum-dare/51/bobos-happiness-factory).
-[Itch.io page here](https://dzejpi.itch.io/bobos-happiness-factory).
+
+* [Ludum Dare page here](https://ldjam.com/events/ludum-dare/51/bobos-happiness-factory).
+* [Itch.io page here](https://dzejpi.itch.io/bobos-happiness-factory).
