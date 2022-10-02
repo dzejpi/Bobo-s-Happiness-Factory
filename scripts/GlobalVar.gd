@@ -29,6 +29,10 @@ var is_4_working = false
 var is_5_working = false
 var is_6_working = false
 
+var bobo_mood = 1
+
+var unload_scene = false
+
 var sfx_glass_fall = preload("res://assets/sfx/sfx_glass_fall.wav")
 var sfx_glass_fall_two = preload("res://assets/sfx/sfx_glass_fall_two.wav")
 var sfx_hard_fall = preload("res://assets/sfx/sfx_hard_fall.wav")
@@ -46,7 +50,16 @@ func _ready():
 
 
 func _process(delta):
-	if damages_taken > 500:
+	if damages_taken > 199:
+		bobo_mood = 4
+	elif	 damages_taken > 149:
+		bobo_mood = 3
+	elif damages_taken > 99:
+		bobo_mood = 2
+	elif damages_taken > 49:
+		bobo_mood = 1
+	
+	if damages_taken >= 250:
 		game_over = true
 	
 	game_time_elapsed += (1 * delta)

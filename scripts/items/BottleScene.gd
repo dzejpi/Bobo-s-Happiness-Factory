@@ -59,6 +59,7 @@ func _ready():
 func _process(delta):
 	if GlobalVar.game_over:
 		visible = false
+		queue_free()
 	elif GlobalVar.game_paused:
 		visible = false
 	else:

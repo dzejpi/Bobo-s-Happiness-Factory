@@ -16,4 +16,5 @@ func _process(delta):
 
 func _on_RestartGameButton_pressed():
 	GlobalVar.play_sound("sfx_select")
+	GlobalVar.unload_scene = true
 	get_tree().reload_current_scene()

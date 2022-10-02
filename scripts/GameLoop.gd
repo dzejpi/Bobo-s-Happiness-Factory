@@ -12,6 +12,7 @@ func _ready():
 	GlobalVar.gifts_wrapped_price = 0
 	GlobalVar.damages_taken = 0
 	GlobalVar.game_over = false
+	GlobalVar.game_paused = false
 	GlobalVar.is_free_to_pick_item = true
 	GlobalVar.game_dialog = ""
 	GlobalVar.game_speed = 1
