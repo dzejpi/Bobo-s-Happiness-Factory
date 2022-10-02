@@ -42,11 +42,11 @@ var sfx_soft_fall = preload("res://assets/sfx/sfx_soft_fall.wav")
 var sfx_soft_fall_two = preload("res://assets/sfx/sfx_soft_fall_two.wav")
 var sfx_wrap = preload("res://assets/sfx/sfx_wrap.wav")
 
-#var game_music = preload("")
+var game_music = preload("res://assets/music/ableton_bobo_music Project/ableton_bobo_music.mp3")
 
 
 func _ready():
-	pass
+	play_music()
 
 
 func _process(delta):
@@ -70,8 +70,9 @@ func _process(delta):
 		game_dialog = ""
 		game_dialog_countdown = 0
 
-#func play_music(number):
-#	music_node.play(game_music)
+func play_music():
+	music_node.stream = game_music 
+	music_node.play()
 	
 	
 func play_sound(sfx):
