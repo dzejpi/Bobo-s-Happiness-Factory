@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://scenes/PauseScene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/TransitionOverlay.tscn" type="PackedScene" id=2]
@@ -19,15 +19,10 @@
 [ext_resource path="res://assets/visual/game_assets/spr_game_working_place2.png" type="Texture" id=17]
 [ext_resource path="res://assets/visual/game_assets/spr_game_working_place1.png" type="Texture" id=18]
 [ext_resource path="res://resources/DefaultFont.tres" type="DynamicFont" id=19]
-[ext_resource path="res://scenes/items/BottleScene.tscn" type="PackedScene" id=20]
 [ext_resource path="res://scripts/UI.gd" type="Script" id=21]
 [ext_resource path="res://assets/visual/game_assets/spr_wrap_guide.png" type="Texture" id=22]
 [ext_resource path="res://scripts/WrapHelper.gd" type="Script" id=23]
-[ext_resource path="res://scenes/items/CandleScene.tscn" type="PackedScene" id=24]
-[ext_resource path="res://scenes/items/ChocolateScene.tscn" type="PackedScene" id=25]
-[ext_resource path="res://scenes/items/JamScene.tscn" type="PackedScene" id=26]
-[ext_resource path="res://scenes/items/SoapScene.tscn" type="PackedScene" id=27]
-[ext_resource path="res://scenes/items/TeaScene.tscn" type="PackedScene" id=28]
+[ext_resource path="res://scenes/ItemGeneratorScene.tscn" type="PackedScene" id=29]
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
@@ -100,7 +95,6 @@ centered = false
 
 [node name="WorkPlaceSprite" type="AnimatedSprite" parent="GameNode/WorkPlace"]
 frames = SubResource( 7 )
-frame = 1
 playing = true
 centered = false
 
@@ -108,50 +102,61 @@ centered = false
 
 [node name="ConveyorOne" type="AnimatedSprite" parent="GameNode/Conveyor Belts"]
 frames = SubResource( 1 )
-frame = 1
 playing = true
 centered = false
 
 [node name="ConveyorTwo" type="AnimatedSprite" parent="GameNode/Conveyor Belts"]
 frames = SubResource( 2 )
+frame = 1
 playing = true
 centered = false
 
 [node name="ConveyorThree" type="AnimatedSprite" parent="GameNode/Conveyor Belts"]
 frames = SubResource( 3 )
+frame = 1
 playing = true
 centered = false
 
 [node name="ConveyorFour" type="AnimatedSprite" parent="GameNode/Conveyor Belts"]
 frames = SubResource( 4 )
+frame = 1
 playing = true
 centered = false
 
 [node name="ConveyorFive" type="AnimatedSprite" parent="GameNode/Conveyor Belts"]
 frames = SubResource( 5 )
-frame = 1
 playing = true
 centered = false
 
 [node name="ConveoyrSix" type="AnimatedSprite" parent="GameNode/Conveyor Belts"]
 frames = SubResource( 6 )
-frame = 1
 playing = true
 centered = false
 
 [node name="Items" type="Node" parent="GameNode"]
 
-[node name="BottleNode" parent="GameNode/Items" instance=ExtResource( 20 )]
+[node name="BottleGenerator" parent="GameNode/Items" instance=ExtResource( 29 )]
+position = Vector2( 13, 69 )
 
-[node name="CandleNode" parent="GameNode/Items" instance=ExtResource( 24 )]
+[node name="CandleGenerator" parent="GameNode/Items" instance=ExtResource( 29 )]
+position = Vector2( 69, 132 )
+type = 2
 
-[node name="ChocolateNode" parent="GameNode/Items" instance=ExtResource( 25 )]
+[node name="ChocolateGenerator" parent="GameNode/Items" instance=ExtResource( 29 )]
+position = Vector2( 123, 132 )
+type = 3
 
-[node name="JamNode" parent="GameNode/Items" instance=ExtResource( 26 )]
+[node name="JamGenerator" parent="GameNode/Items" instance=ExtResource( 29 )]
+position = Vector2( 245, 91 )
+type = 4
 
-[node name="SoapNode" parent="GameNode/Items" instance=ExtResource( 27 )]
+[node name="TeaGenerator" parent="GameNode/Items" instance=ExtResource( 29 )]
+position = Vector2( 188, 30 )
+type = 5
 
-[node name="TeaNode" parent="GameNode/Items" instance=ExtResource( 28 )]
+[node name="SoapGenerator" parent="GameNode/Items" instance=ExtResource( 29 )]
+position = Vector2( 134, 30 )
+type = 6
 
 [node name="WrapHelper" type="Node2D" parent="GameNode"]
 script = ExtResource( 23 )
