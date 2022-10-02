@@ -9,6 +9,7 @@ var bobo_sprite_3 = preload("res://assets/visual/game_assets/bobo/spr_bobo_three
 var bobo_sprite_4 = preload("res://assets/visual/game_assets/bobo/spr_bobo_four.png")
 
 var bobo_mood = GlobalVar.bobo_mood
+var is_bobo_going_right = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,6 +17,18 @@ func _ready():
 
 
 func _process(delta):
+	
+	if is_bobo_going_right:
+		if self.global_position.x < 20:
+			self.position.x += 0.10
+		else:
+			is_bobo_going_right = false
+	else:
+		if self.global_position.x > -20:
+			self.position.x -= 0.10
+		else:
+			is_bobo_going_right = true
+	
 	bobo_mood = GlobalVar.bobo_mood
 	
 	match bobo_mood:
