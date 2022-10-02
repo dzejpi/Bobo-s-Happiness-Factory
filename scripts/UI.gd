@@ -10,5 +10,5 @@ func _ready():
 
 
 func _process(delta):
-	gifts_wrapped.text = "Gifts wrapped: " + String(GlobalVar.gifts_wrapped)
+	gifts_wrapped.text = "Gifts wrapped: " + String(GlobalVar.gifts_wrapped) + " / " + String(GlobalVar.gifts_wrapped_price) + " $"
 	gifts_destroyed.text = String(GlobalVar.damages_taken) + "$ damaged"

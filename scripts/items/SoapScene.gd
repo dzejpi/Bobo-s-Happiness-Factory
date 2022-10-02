@@ -110,6 +110,7 @@ func _process(delta):
 				is_wrapped_up = true
 				is_being_wrapped = false
 				GlobalVar.gifts_wrapped += 1
+				GlobalVar.gifts_wrapped_price += price_value
 				GlobalVar.is_free_to_pick_item = true
 			
 	if is_wrapped_up:
